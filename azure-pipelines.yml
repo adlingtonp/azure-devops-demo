@@ -16,10 +16,6 @@ steps:
   inputs:
       sshEndpoint: 'MaxUbuntu'
       runOptions: 'commands'
-      commands: 'docker run --entrypoint="/work/runDBC.sh" --network maximo-oracle-docker_maxnet maximo/maximonew'
+      commands: 'docker run --entrypoint="/work/runDBC.sh" --network maximo-oracle-docker_maxnet maximo/maximonew2'
 
-- task: SSH@0
-  inputs:
-      sshEndpoint: 'MaxUbuntu'
-      runOptions: 'commands'
-      commands: 'docker restart 57bf7d23f48a'
+
