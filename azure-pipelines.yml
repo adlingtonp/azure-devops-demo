@@ -12,8 +12,14 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- task: SSH@0
+  inputs:
+      sshEndpoint: 'MaxUbuntu'
+      runOptions: 'commands'
+      commands: 'docker run -ti --entrypoint="/work/runDBC.sh" --network maximo-oracle-docker_maxnet maximo/maximonew'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: SSH@0
+  inputs:
+      sshEndpoint: 'MaxUbuntu'
+      runOptions: 'commands'
+      commands: 'docker restart 57bf7d23f48a'
